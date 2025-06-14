@@ -3,25 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Jaydatt Khodave, an aspiring Software Engineer specializing in web development, Android apps, and innovative software solutions. Explore my projects and skills.">
-    <meta name="keywords" content="Jaydatt Khodave, Software Engineer, Web Developer, Android Developer, Portfolio, B.Tech CSE, MGM University, HTML, CSS, JavaScript">
+    <meta name="description" content="Portfolio of Jaydatt Khodave, an aspiring Software Engineer specializing in web development, Android apps, and innovative software solutions.">
+    <meta name="keywords" content="Jaydatt Khodave, Software Engineer, Web Developer, Android Developer, Portfolio, B.Tech CSE, MGM University">
     <meta name="author" content="Jaydatt Khodave">
-    <meta name="robots" content="index, follow">
     <title>Jaydatt Khodave - Software Engineer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     <script src="script.js" defer></script>
 </head>
-<body>
+<body data-theme="dark">
+    <div id="preloader" class="preloader">
+        <div class="preloader-icon">
+            <span class="material-icons">code</span>
+        </div>
+    </div>
+
     <div class="bg-effects"></div>
-    
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
+    <div class="scroll-progress"></div>
+
+    <header class="navbar" role="banner" aria-label="Main navigation">
+        <nav class="nav-container">
             <div class="logo">
                 <span class="logo-icon material-icons">code</span>
                 <span class="logo-text">Jaydatt Khodave</span>
             </div>
-            <ul class="nav-links" role="menu">
+            <ul class="nav-links" role="menubar">
                 <li><a href="#home" role="menuitem">Home</a></li>
                 <li><a href="#about" role="menuitem">About</a></li>
                 <li><a href="#skills" role="menuitem">Skills</a></li>
@@ -29,151 +38,226 @@
                 <li><a href="#contact" role="menuitem">Contact</a></li>
             </ul>
             <div class="auth-buttons">
-                <a href="#contact" class="sign-in"><span class="material-icons">mail</span> Get in Touch</a>
-                <a href="resume.pdf" download class="sign-up"><span class="material-icons">download</span> Resume</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <span class="material-icons">dark_mode</span>
+                </button>
+                <a href="#contact" class="btn btn-primary"><span class="material-icons">mail</span> Get in Touch</a>
+                <a href="resume.pdf" download class="btn btn-secondary"><span class="material-icons">download</span> Resume</a>
             </div>
             <button class="menu-toggle" aria-label="Toggle navigation menu"><span class="material-icons">menu</span></button>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <section id="home" class="hero" aria-label="Introduction">
-        <div class="hero-particles"></div>
-        <div class="profile-image">
-            <img src="profile-placeholder.png" alt="Jaydatt Khodave's profile picture" aria-label="Profile picture">
-        </div>
-        <h1>Jaydatt Khodave</h1>
-        <p class="subtitle">Aspiring <span class="highlight">Software Engineer</span> | Building Tomorrow's Solutions</p>
-        <div class="indian-flag-colors"></div>
-        <div class="hero-buttons">
-            <a href="#projects" class="hero-btn"><span class="material-icons">work</span> View Projects</a>
-            <a href="resume.pdf" download class="hero-btn hero-btn-secondary"><span class="material-icons">download</span> Download Resume</a>
-        </div>
-    </section>
+    <aside class="sidebar" aria-label="Sidebar navigation">
+        <ul class="sidebar-links">
+            <li><a href="#home" class="sidebar-link" data-tooltip="Home"><span class="material-icons">home</span></a></li>
+            <li><a href="#about" class="sidebar-link" data-tooltip="About"><span class="material-icons">person</span></a></li>
+            <li><a href="#skills" class="sidebar-link" data-tooltip="Skills"><span class="material-icons">build</span></a></li>
+            <li><a href="#projects" class="sidebar-link" data-tooltip="Projects"><span class="material-icons">work</span></a></li>
+            <li><a href="#contact" class="sidebar-link" data-tooltip="Contact"><span class="material-icons">mail</span></a></li>
+        </ul>
+    </aside>
 
-    <section id="about" aria-label="About Me">
-        <h2 class="features-title"><span class="material-icons">person</span> About Me</h2>
-        <div class="features">
-            <div class="feature-card">
-                <h3 class="feature-title"><span class="material-icons">school</span> Education</h3>
-                <ul class="feature-list">
-                    <li>Shivneri Public School, Palam (2012 - 2015)</li>
-                    <li>Mamata Prathamik Vidyalaya, Palam (2015 - 2019)</li>
-                    <li>Gandhi Vidyalaya, Parbhani (2019 - 2022)</li>
-                    <li>Sharadchandraji Pawar Jr. College, Gangakhed (2022 - 2025)</li>
-                    <li>MGM University, Chhatrapati Sambhajinagar (B.Tech CSE, 2025 Onward)</li>
-                </ul>
-            </div>
-            <div class="feature-card">
-                <h3 class="feature-title"><span class="material-icons">flag</span> Career Goal</h3>
-                <p class="feature-description">
-                    Passionate about creating impactful software solutions, I aim to collaborate with innovative teams, master cutting-edge technologies, and launch a startup that addresses global challenges.
-                </p>
-            </div>
-            <div class="feature-card">
-                <h3 class="feature-title"><span class="material-icons">favorite</span> Interests</h3>
-                <ul class="feature-list">
-                    <li>Tech Blogging</li>
-                    <li>Android Development</li>
-                    <li>Software Design</li>
-                    <li>Open Source Contributions</li>
-                    <li>Startup Ecosystems</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" aria-label="Skills">
-        <h2 class="features-title"><span class="material-icons">build</span> My Skills</h2>
-        <div class="features">
-            <div class="feature-card">
-                <h3 class="feature-title"><span class="material-icons">code</span> Technical Skills</h3>
-                <ul class="feature-list">
-                    <li>HTML, CSS, JavaScript</li>
-                    <li>Git & GitHub</li>
-                    <li>SEO & Web Optimization</li>
-                    <li>Blogger CMS & Cloudflare Workers</li>
-                    <li>UI/UX Design Basics</li>
-                </ul>
-            </div>
-            <div class="feature-card">
-                <h3 class="feature-title"><span class="material-icons">language</span> Languages</h3>
-                <ul class="feature-list">
-                    <li>English (Fluent)</li>
-                    <li>Hindi (Fluent)</li>
-                    <li>Marathi (Native)</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" aria-label="Projects">
-        <h2 class="features-title"><span class="material-icons">work</span> My Projects</h2>
-        <div class="features">
-            <div class="feature-card">
-                <h3 class="feature-title">Personal Portfolio Website</h3>
-                <p class="feature-description">
-                    A responsive portfolio showcasing my skills and projects, built with HTML, CSS, and JavaScript. Features smooth animations, SEO optimization, and a modern UI.<br>
-                    <strong>Tech Stack:</strong> HTML, CSS, JavaScript
-                </p>
-                <div class="project-links">
-                    <a href="http://my.itisuniqueofficial.com" target="_blank" class="project-link"><span class="material-icons">public</span> Live Demo</a>
-                    <a href="#" class="project-link"><span class="material-icons">code</span> GitHub</a>
+    <main class="main-content">
+        <section id="home" class="hero" aria-label="Introduction">
+            <div class="hero-particles"></div>
+            <div class="hero-content">
+                <div class="profile-image">
+                    <img src="profile-placeholder.webp" loading="lazy" alt="Jaydatt Khodave's profile picture" aria-label="Profile picture">
+                </div>
+                <h1>Jaydatt Khodave</h1>
+                <p class="subtitle">Aspiring <span class="highlight">Software Engineer</span> | Crafting Innovative Solutions</p>
+                <div class="indian-flag-colors"></div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary"><span class="material-icons">work</span> Explore Projects</a>
+                    <a href="#contact" class="btn btn-secondary"><span class="material-icons">mail</span> Contact Me</a>
                 </div>
             </div>
-            <div class="feature-card">
-                <h3 class="feature-title">Tech Blog Platform</h3>
-                <p class="feature-description">
-                    A blogging platform for tech tutorials, optimized for performance using Blogger CMS and Cloudflare Workers, with a focus on user engagement and SEO.<br>
-                    <strong>Tech Stack:</strong> Blogger CMS, Cloudflare Workers, JavaScript
-                </p>
-                <div class="project-links">
-                    <a href="#" class="project-link"><span class="material-icons">public</span> Live Demo</a>
-                    <a href="#" class="project-link"><span class="material-icons">code</span> GitHub</a>
-                </div>
-            </div>
-            <div class="feature-card">
-                <h3 class="feature-title">Android To-Do App</h3>
-                <p class="feature-description">
-                    A task management app for Android, featuring a clean UI, local storage, and efficient task organization.<br>
-                    <strong>Tech Stack:</strong> Java, Android Studio, SQLite
-                </p>
-                <div class="project-links">
-                    <a href="#" class="project-link"><span class="material-icons">public</span> Live Demo</a>
-                    <a href="#" class="project-link"><span class="material-icons">code</span> GitHub</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" aria-label="Contact">
-        <h2 class="features-title"><span class="material-icons">mail</span> Get in Touch</h2>
-        <div class="features">
-            <div class="feature-card">
-                <h3 class="feature-title"><span class="material-icons">contact_phone</span> Contact Information</h3>
-                <ul class="feature-list">
-                    <li><span class="material-icons">phone</span> Phone: +91 7517651748</li>
-                    <li><span class="material-icons">chat</span> WhatsApp: +91 7517651748 | +91 9270017264</li>
-                    <li><span class="material-icons">email</span> Email: <a href="mailto:jaydatt@itisuniqueofficial.com">jaydatt@itisuniqueofficial.com</a></li>
-                    <li><span class="material-icons">web</span> Portfolio: <a href="http://my.itisuniqueofficial.com" target="_blank">my.itisuniqueofficial.com</a></li>
-                    <li><span class="material-icons">location_on</span> Address: Near Ravi Tower, Vikas Nagar, Parbhani - 431401</li>
-                </ul>
+        <section id="about" class="content-section" aria-label="About Me">
+            <h2 class="section-title"><span class="material-icons">person</span> About Me</h2>
+            <div class="features">
+                <article class="feature-card">
+                    <h3 class="feature-title"><span class="material-icons">school</span> Education</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-year">2012 - 2015</span>
+                            <p class="timeline-description">Shivneri Public School, Palam</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2015 - 2019</span>
+                            <p class="timeline-description">Mamata Prathamik Vidyalaya, Palam</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2019 - 2022</span>
+                            <p class="timeline-description">Gandhi Vidyalaya, Parbhani</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2022 - 2025</span>
+                            <p class="timeline-description">Sharadchandraji Pawar Jr. College, Gangakhed</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-year">2025 Onward</span>
+                            <p class="timeline-description">MGM University, Chhatrapati Sambhajinagar (B.Tech CSE)</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="feature-card">
+                    <h3 class="feature-title"><span class="material-icons">flag</span> Career Goal</h3>
+                    <p class="feature-description">
+                        I aim to create impactful software solutions, collaborate with global teams, and launch a startup addressing real-world challenges.
+                    </p>
+                </article>
+                <article class="feature-card">
+                    <h3 class="feature-title"><span class="material-icons">favorite</span> Interests</h3>
+                    <ul class="feature-list">
+                        <li>Tech Blogging</li>
+                        <li>Android Development</li>
+                        <li>Software Architecture</li>
+                        <li>Open Source Contributions</li>
+                        <li>Startup Ecosystems</li>
+                    </ul>
+                </article>
             </div>
-            <div class="feature-card">
-                <h3 class="feature-title"><span class="material-icons">send</span> Send a Message</h3>
-                <form id="contact-form" class="contact-form" aria-label="Contact form">
-                    <input type="text" id="name" placeholder="Your Name" required aria-required="true">
-                    <input type="email" id="email" placeholder="Your Email" required aria-required="true">
-                    <textarea id="message" placeholder="Your Message" required aria-required="true"></textarea>
-                    <button type="submit" class="send-button"><span class="material-icons">send</span> Send</button>
-                    <p id="form-message" class="form-message" role="alert"></p>
-                </form>
+        </section>
+
+        <section id="skills" class="content-section" aria-label="Skills">
+            <h2 class="section-title"><span class="material-icons">build</span> My Skills</h2>
+            <div class="features">
+                <article class="feature-card">
+                    <h3 class="feature-title"><span class="material-icons">code</span> Technical Skills</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span class="skill-name">HTML5, CSS3, JavaScript (ES6+)</span>
+                            <div class="progress-bar">
+                                <div class="progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Git & GitHub</span>
+                            <div class="progress-bar">
+                                <div class="progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SEO & Web Performance Optimization</span>
+                            <div class="progress-bar">
+                                <div class="progress" data-progress="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Blogger CMS & Cloudflare Workers</span>
+                            <div class="progress-bar">
+                                <div class="progress" data-progress="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">UI/UX Design Principles</span>
+                            <div class="progress-bar">
+                                <div class="progress" data-progress="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="feature-card">
+                    <h3 class="feature-title"><span class="material-icons">language</span> Languages</h3>
+                    <ul class="feature-list">
+                        <li>English (Fluent)</li>
+                        <li>Hindi (Fluent)</li>
+                        <li>Marathi (Native)</li>
+                    </ul>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="projects" class="content-section" aria-label="Projects">
+            <h2 class="section-title"><span class="material-icons">work</span> My Projects</h2>
+            <div class="features project-grid">
+                <article class="feature-card project-card">
+                    <h3 class="feature-title">Personal Portfolio Website</h3>
+                    <p class="feature-description">
+                        A modern, responsive portfolio showcasing my skills and projects with smooth animations and SEO optimization.<br>
+                        <strong>Tech Stack:</strong> HTML5, CSS3, JavaScript, GSAP
+                    </p>
+                    <div class="project-links">
+                        <a href="http://my.itisuniqueofficial.com" target="_blank" class="project-link btn btn-primary"><span class="material-icons">public</span> Live Demo</a>
+                        <a href="#" class="project-link btn btn-secondary"><span class="material-icons">code</span> GitHub</a>
+                    </div>
+                </article>
+                <article class="feature-card project-card">
+                    <h3 class="feature-title">Tech Blog Platform</h3>
+                    <p class="feature-description">
+                        A performance-optimized blogging platform for tech tutorials, leveraging Blogger CMS and Cloudflare Workers.<br>
+                        <strong>Tech Stack:</strong> Blogger CMS, Cloudflare Workers, JavaScript
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link btn btn-primary"><span class="material-icons">public</span> Live Demo</a>
+                        <a href="#" class="project-link btn btn-secondary"><span class="material-icons">code</span> GitHub</a>
+                    </div>
+                </article>
+                <article class="feature-card project-card">
+                    <h3 class="feature-title">Android To-Do App</h3>
+                    <p class="feature-description">
+                        A task management app with a clean UI, local storage, and efficient task organization for Android users.<br>
+                        <strong>Tech Stack:</strong> Java, Android Studio, SQLite
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="project-link btn btn-primary"><span class="material-icons">public</span> Live Demo</a>
+                        <a href="#" class="project-link btn btn-secondary"><span class="material-icons">code</span> GitHub</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section" aria-label="Contact">
+            <h2 class="section-title"><span class="material-icons">mail</span> Get in Touch</h2>
+            <div class="features">
+                <article class="feature-card">
+                    <h3 class="feature-title"><span class="material-icons">contact_phone</span> Contact Information</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <span class="contact-icon material-icons">phone</span>
+                            <span class="contact-text">Phone: <a href="tel:+917517651748">+91 7517651748</a></span>
+                        </li>
+                        <li>
+                            <span class="contact-icon material-icons">chat</span>
+                            <span class="contact-text">WhatsApp: <a href="https://wa.me/917517651748">+91 7517651748</a> | <a href="https://wa.me/919270017264">+91 9270017264</a></span>
+                        </li>
+                        <li>
+                            <span class="contact-icon material-icons">email</span>
+                            <span class="contact-text">Email: <a href="mailto:jaydatt@itisuniqueofficial.com">jaydatt@itisuniqueofficial.com</a></span>
+                        </li>
+                        <li>
+                            <span class="contact-icon material-icons">web</span>
+                            <span class="contact-text">Portfolio: <a href="http://my.itisuniqueofficial.com" target="_blank">my.itisuniqueofficial.com</a></span>
+                        </li>
+                        <li>
+                            <span class="contact-icon material-icons">location_on</span>
+                            <span class="contact-text">Address: Near Ravi Tower, Vikas Nagar, Parbhani - 431401</span>
+                        </li>
+                    </ul>
+                </article>
+                <article class="feature-card">
+                    <h3 class="feature-title"><span class="material-icons">send</span> Send a Message</h3>
+                    <form id="contact-form" class="contact-form" aria-label="Contact form">
+                        <input type="text" id="name" placeholder="Your Name" required aria-required="true">
+                        <input type="email" id="email" placeholder="Your Email" required aria-required="true">
+                        <textarea id="message" placeholder="Your Message" required aria-required="true"></textarea>
+                        <button type="submit" class="btn btn-primary send-button">
+                            <span class="material-icons">send</span> Send Message
+                            <span class="loading-spinner hidden"></span>
+                        </button>
+                        <p id="form-message" class="form-message" role="alert"></p>
+                    </form>
+                </article>
+            </div>
+        </section>
+    </main>
 
     <footer role="contentinfo">
         <div class="footer-content">
-            <div class="footer-logo">
+            <div class="footer-section footer-branding">
                 <div class="footer-logo-container">
                     <span class="logo-icon material-icons">code</span>
                     <span class="logo-text">Jaydatt Khodave</span>
@@ -181,14 +265,8 @@
                 <p class="footer-description">
                     Aspiring Software Engineer | B.Tech (CSE), MGM University
                 </p>
-                <div class="social-icons">
-                    <a href="#" class="social-icon" aria-label="Twitter"><span class="material-icons">share</span></a>
-                    <a href="#" class="social-icon" aria-label="Facebook"><span class="material-icons">facebook</span></a>
-                    <a href="#" class="social-icon" aria-label="Instagram"><span class="material-icons">photo_camera</span></a>
-                    <a href="#" class="social-icon" aria-label="LinkedIn"><span class="material-icons">business</span></a>
-                </div>
             </div>
-            <div class="footer-links">
+            <div class="footer-section footer-links">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -198,13 +276,22 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-links">
+            <div class="footer-section footer-resources">
                 <h3>Resources</h3>
                 <ul>
                     <li><a href="http://my.itisuniqueofficial.com" target="_blank">Portfolio</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">GitHub</a></li>
                 </ul>
+            </div>
+            <div class="footer-section footer-social">
+                <h3>Follow Me</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="Twitter"><span class="material-icons">share</span></a>
+                    <a href="#" class="social-icon" aria-label="Facebook"><span class="material-icons">facebook</span></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><span class="material-icons">photo_camera</span></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><span class="material-icons">business</span></a>
+                </div>
             </div>
         </div>
         <div class="copyright">
@@ -215,5 +302,9 @@
             </div>
         </div>
     </footer>
+
+    <button id="back-to-top" class="btn btn-primary back-to-top" aria-label="Back to top">
+        <span class="material-icons">arrow_upward</span>
+    </button>
 </body>
 </html>
